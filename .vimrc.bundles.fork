@@ -24,14 +24,10 @@ Bundle 'digitaltoad/vim-jade'
 " markdown
 Bundle 'tpope/vim-markdown'
 
-" toml
-Bundle 'cespare/vim-toml'
-
 " html - amirh/HTML-AutoCloseTag in original bundle has deprecated
 " in any case we don't need some of those plugins
 Bundle 'vim-scripts/HTML-AutoCloseTag'
 Bundle 'hail2u/vim-css3-syntax'
-Bundle 'gorodinskiy/vim-coloresque'
 
 " ember
 Bundle 'joukevandermaas/vim-ember-hbs'
