@@ -119,6 +119,11 @@ augroup r
   autocmd BufRead,BufNewFile *.r set indentexpr=""
 augroup END
 
+augroup haproxy
+  autocmd!
+  autocmd BufRead,BufNewFile haproxy.cfg set ft=haproxy
+augroup END
+
 " =============================
 " plugins
 " =============================
