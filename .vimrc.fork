@@ -161,6 +161,10 @@ augroup nerdtree_tweaks
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 augroup END
 
+" airline
+" wordcount is bugged, throws undefined variables; plus not needed anyway
+let g:airline#extensions#wordcount#enabled=0
+
 " =============================
 " local-specific
 " =============================
