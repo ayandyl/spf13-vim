@@ -100,8 +100,16 @@ noremap <leader>qc :cclose<cr>
 nnoremap <leader>fo :set foldlevel=99<cr>   " open all folds
 
 " grep with ag, put results in "quickfix" window
-command -nargs=+ -complete=file -bar Ag silent! grep! <args> %:p:h|cwindow|redraw!
-nnoremap <leader>gg :Ag<space>
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor\ --hidden\ --ignore\ /.git/
+  " use ag in CtrlP, fast and respects .gitignore
+  let g:ctrlp_user_command='ag %s -l --nocolor -g ""'
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching=0
+
+  command -nargs=+ -complete=file -bar Ag silent! grep! <args> %:p:h|cwindow|redraw!
+  nnoremap <leader>gg :Ag<space>
+endif
 
 " colorscheme
 try
