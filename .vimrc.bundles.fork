@@ -1,3 +1,10 @@
+UnBundle 'terryma/vim-multiple-cursors'
+UnBundle 'kana/vim-textobj-user'
+UnBundle 'kana/vim-textobj-indent'
+UnBundle 'mattn/webapi-vim'
+UnBundle 'mattn/gist-vim'
+UnBundle 'groenewege/vim-less'
+
 " BufExplorer
 Bundle 'jlanzarotta/bufexplorer'
 
