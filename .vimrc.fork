@@ -117,3 +117,10 @@ augroup nerdtree_tweaks
   " close vim if only NERDTree left
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 augroup END
+
+" =============================
+" local-specific
+" =============================
+
+" my usual dir for dev work
+cd /data/dev
