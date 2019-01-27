@@ -99,6 +99,10 @@ noremap <leader>qc :cclose<cr>
 " open all folds
 nnoremap <leader>fo :set foldlevel=99<cr>   " open all folds
 
+" grep with ag, put results in "quickfix" window
+command -nargs=+ -complete=file -bar Ag silent! grep! <args> %:p:h|cwindow|redraw!
+nnoremap <leader>gg :Ag<space>
+
 " colorscheme
 try
   colorscheme southernlights
