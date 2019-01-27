@@ -1,0 +1,35 @@
+let g:spf13_bundle_groups=[
+  \ 'general',
+  \ 'programming',
+  \ 'python',
+  \ 'javascript',
+  \ 'html',
+  \ 'ruby'
+  \ ]
+
+" BufExplorer
+Bundle 'jlanzarotta/bufexplorer'
+
+" ruby
+Bundle 'vim-ruby/vim-ruby'
+
+" crystal
+Bundle 'rhysd/vim-crystal'
+
+" typescript
+Bundle 'leafgarland/typescript-vim'
+
+" jsx
+Bundle 'mxw/vim-jsx'
+
+" graphQL
+Bundle 'vim-graphql'
+
+" jade
+Bundle 'digitaltoad/vim-jade'
+
+" markdown
+Bundle 'tpope/vim-markdown'
+
+" toml
+Bundle 'cespare/vim-toml'

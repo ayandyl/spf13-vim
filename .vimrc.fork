@@ -1,0 +1,119 @@
+" turn off backups, we have source control
+set nobackup
+set nowb
+set noswapfile
+
+" smart tabs
+set smarttab
+set smartindent
+
+" file type should default to unix, but dos is more practical than mac otherwise
+set ffs=unix,dos,mac
+
+" GREAT!
+" remove trailing whitespaces and ^M chars for all files
+augroup remove_whitespace
+  autocmd!
+  autocmd BufWritePre * :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+augroup END
+
+" return to last edit position when opening files
+autocmd BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
+  \ endif
+" remember info about open buffers on close
+set viminfo^=%
+
+" jump between windows
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
+
+" close current buffer
+noremap <leader>bd :Bclose<cr>
+  " don't close window when deleting a buffer
+  command! Bclose call <SID>BufcloseCloseIt()
+  function! <SID>BufcloseCloseIt()
+    let l:currentBufNum = bufnr("%")
+    let l:alternateBufNum = bufnr("#")
+
+    if buflisted(l:alternateBufNum)
+      buffer #
+    else
+      bnext
+    endif
+
+    if bnfnr("%") == l:currentBufNum
+      new
+    endif
+
+    if buflisted(l:currentBufNum)
+      execute("bdelete! ".l:currentBufNum)
+    endif
+  endfunction
+" close all buffers
+noremap <leader>ba :%bd!<cr>
+" switch buffer behavior
+try
+  set switchbuf=USEOPENsetab,newtab
+catch
+endtry
+
+" turn magic on for regex
+set magic
+
+" open and close quickfix window
+noremap <leader>qo :copen<cr>
+noremap <leader>qc :cclose<cr>
+
+" colorscheme
+try
+  colorscheme southernlights
+catch /^Vim\%((\a\+)\)\=:E185/
+endtry
+
+" general editing goodies
+set shiftwidth=2 tabstop=2 softtabstop=2
+set nospell
+set wrap
+
+" =============================
+" language-specific
+" =============================
+
+augroup r
+  autocmd!
+  " we don't use lisp-style
+  autocmd BufRead,BufNewFile *.r set indentexpr=""
+augroup END
+
+" =============================
+" plugins
+" =============================
+
+" CtrlP
+let g:ctrlp_prompt_mappings = {
+  \ 'PrtClearCache()': ['<c-h>'],
+  \ 'PrtCurLeft()': ['<left>', '<c-^>'],
+  \ }
+
+" Buffer explorer
+" remove the default BufExplorer mapping and map it to <leader>be
+nnoremap <leader>b <nop>
+nnoremap <leader>be :BufExplorer<cr>
+
+" NERDTree
+" toggle NERDTree
+noremap <leader>nn :NERDTreeToggle<cr>:NERDTreeMirror<cr>
+" locate current file in NERDTree
+noremap <leader>nf :NERDTreeFind<cr>
+
+augroup nerdtree_tweaks
+  autocmd!
+  " open NERDTree on start, if no file specified
+  autocmd vimenter * if !argc() | NERDTree | endif
+  " close vim if only NERDTree left
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+augroup END
