@@ -1,11 +1,39 @@
+" map 'jk' to Esc
+inoremap jk <Esc>
+inoremap Jk <Esc>
+inoremap jK <Esc>
+inoremap JK <Esc>
+
+" auto read a file if changed externally
+set autoread
+
+" prefer spaces, but use smart tabs
+set shiftwidth=2 tabstop=2 softtabstop=2
+set smarttab
+set smartindent
+
+set nospell
+set wrap linebreak
+
+" no mouse needed, to prevent accidental clicks on touchpad
+set mouse-=a
+
+" show 80-char indicator
+set colorcolumn=80
+
+" <leader>w to fast save all buffers
+noremap <leader>w :wa!<cr>
+
+" <leader>ct to update file when changed on disk
+noremap <leader>ct :checktime<cr>
+
+" print fill file path
+noremap <leader>pf :put =expand('%:p')<cr>
+
 " turn off backups, we have source control
 set nobackup
 set nowb
 set noswapfile
-
-" smart tabs
-set smarttab
-set smartindent
 
 " file type should default to unix, but dos is more practical than mac otherwise
 set ffs=unix,dos,mac
@@ -73,11 +101,6 @@ try
   colorscheme southernlights
 catch /^Vim\%((\a\+)\)\=:E185/
 endtry
-
-" general editing goodies
-set shiftwidth=2 tabstop=2 softtabstop=2
-set nospell
-set wrap
 
 " =============================
 " language-specific
