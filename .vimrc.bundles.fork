@@ -3,7 +3,6 @@ let g:spf13_bundle_groups=[
   \ 'programming',
   \ 'python',
   \ 'javascript',
-  \ 'html',
   \ 'ruby'
   \ ]
 
@@ -16,16 +15,10 @@ Bundle 'vim-ruby/vim-ruby'
 " crystal
 Bundle 'rhysd/vim-crystal'
 
-" typescript
+" js stuff
 Bundle 'leafgarland/typescript-vim'
-
-" jsx
 Bundle 'mxw/vim-jsx'
-
-" graphQL
-Bundle 'vim-graphql'
-
-" jade
+Bundle 'jparise/vim-graphql'
 Bundle 'digitaltoad/vim-jade'
 
 " markdown
@@ -33,3 +26,9 @@ Bundle 'tpope/vim-markdown'
 
 " toml
 Bundle 'cespare/vim-toml'
+
+" html - amirh/HTML-AutoCloseTag in original bundle has deprecated
+" in any case we don't need some of those plugins
+Bundle 'vim-scripts/HTML-AutoCloseTag'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'gorodinskiy/vim-coloresque'
