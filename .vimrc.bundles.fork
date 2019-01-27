@@ -4,6 +4,7 @@ UnBundle 'kana/vim-textobj-indent'
 UnBundle 'mattn/webapi-vim'
 UnBundle 'mattn/gist-vim'
 UnBundle 'groenewege/vim-less'
+UnBundle 'klen/python-mode'
 
 " BufExplorer
 Bundle 'jlanzarotta/bufexplorer'
