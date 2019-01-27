@@ -96,6 +96,9 @@ set magic
 noremap <leader>qo :copen<cr>
 noremap <leader>qc :cclose<cr>
 
+" open all folds
+nnoremap <leader>fo :set foldlevel=99<cr>   " open all folds
+
 " colorscheme
 try
   colorscheme southernlights
