@@ -24,6 +24,9 @@ Bundle 'digitaltoad/vim-jade'
 " markdown
 Bundle 'tpope/vim-markdown'
 
+" haproxy
+Bundle 'ctiml/haproxy-syntax-vim'
+
 " html - amirh/HTML-AutoCloseTag in original bundle has deprecated
 " in any case we don't need some of those plugins
 Bundle 'vim-scripts/HTML-AutoCloseTag'
