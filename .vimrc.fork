@@ -162,6 +162,13 @@ let g:airline#extensions#wordcount#enabled=0
 " no need to remind me about all the unix utf8 files
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 
+" syntastic
+" python
+" E0401: import error
+" C0111: missing class docstring
+" R0903: too few public methods
+let syntastic_python_pylint_args='--disable=E0401,C0111,R0903'
+
 " =============================
 " local-specific
 " =============================
