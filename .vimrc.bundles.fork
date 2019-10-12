@@ -34,3 +34,6 @@ Bundle 'hail2u/vim-css3-syntax'
 
 " ember
 Bundle 'joukevandermaas/vim-ember-hbs'
+
+" toml
+Bundle 'cespare/vim-toml'
