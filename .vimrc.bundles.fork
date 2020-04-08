@@ -22,7 +22,7 @@ Bundle 'jparise/vim-graphql'
 Bundle 'digitaltoad/vim-jade'
 
 " markdown
-Bundle 'tpope/vim-markdown'
+Bundle 'gabrielelana/vim-markdown'
 
 " haproxy
 Bundle 'ctiml/haproxy-syntax-vim'
