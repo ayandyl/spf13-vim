@@ -131,6 +131,10 @@ augroup END
 " plugins
 " =============================
 
+" markdown
+let g:markdown_enable_spell_checking = 0      " remove spell check
+let g:markdown_enable_input_abbreviations = 0 " remove ":-)" -> ":smile:"
+
 " CtrlP
 let g:ctrlp_prompt_mappings = {
   \ 'PrtClearCache()': ['<c-h>'],
