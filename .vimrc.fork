@@ -178,4 +178,4 @@ let syntastic_python_pylint_args='--disable=E0401,C0111,R0903'
 " =============================
 
 " my usual dir for dev work
-cd /data/dev
+cd /code
